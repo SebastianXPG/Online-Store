@@ -1,0 +1,58 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  background-image: url("https://besthqwallpapers.com/Uploads/31-8-2019/103549/gray-low-poly-background-low-poly-abstract-background-geometric-background-creative-art.jpg");
+  position: relative;
+  border-radius: 10px;
+  filter: opacity(0.9) grayscale(0.3);
+}
+
+.Logo {
+  height: 120px;
+  width: 230px;
+}
+
+.content-svg-carrito i {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.content-svg-carrito i:hover {
+  color: orange;
+  transition: 0.7s;
+}
+
+.carrito-enlace {
+  position: relative;
+}
+
+.cart-counter {
+  position: absolute;
+  top: -25px;
+  right: -10px;
+  background-color: orange;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 9px;
+}
+
+.login-button {
+  background: linear-gradient(to right, #1aab8a, #2bffcab7);
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-right: 10px;
+}
+
+.login-button:hover {
+  background: linear-gradient(to right, #2bffcab7, #1aab8a);
+}
