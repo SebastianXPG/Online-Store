@@ -20,13 +20,17 @@ function Footer() {
           <div className="content-phone">
             <p className="text-phone">Tienes Alguna Duda? Llama las 24/7</p>
             <div className="content-phone-svg">
-              <i class="bi bi-telephone"></i>
+              <i className="bi bi-telephone"></i>
               <h2>+57 3147398347</h2>
             </div>
           </div>
         </div>
         <div className="content-links">
-          <a href="/">
+          <a
+            href="https://api.whatsapp.com/send?phone=573147398347"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={whatsapp} alt="WhatsApp" />
             WhatsApp
           </a>
@@ -43,13 +47,38 @@ function Footer() {
             Discord
           </a>
         </div>
-        <div className="content-my-account">
-            <h2>My Account</h2>
-          <ul>
-            <li>Sing In</li>
-            <li></li>
-            <li></li>
-            <li></li>
+        <div className="contents-footers">
+          <h2>My Account</h2>
+          <ul className="list-footers">
+            <a href="/">
+              <li>Sing In</li>
+            </a>
+            <a href="/">
+              <li>View Cart</li>
+            </a>
+            <a href="/">
+              <li>My Wishilist</li>
+            </a>
+            <a href="/">
+              <li>Help</li>
+            </a>
+          </ul>
+        </div>
+        <div className="contents-footers">
+          <h2>Customers Services</h2>
+          <ul className="list-footers">
+            <a href="/">
+              <li>Payment Methods</li>
+            </a>
+            <a href="/">
+              <li>Returns</li>
+            </a>
+            <a href="/">
+              <li>Terms and Conditions</li>
+            </a>
+            <a href="/">
+              <li>Privacy Policy</li>
+            </a>
           </ul>
         </div>
       </div>

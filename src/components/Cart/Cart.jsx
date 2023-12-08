@@ -1,5 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import "./Cart.css";
 
 const Cart = ({ carrito, setCarrito }) => {
   const removeFromCart = (productId) => {
@@ -18,32 +18,52 @@ const Cart = ({ carrito, setCarrito }) => {
   };
 
   return (
-    <div>
-      <h2>Carrito de compras</h2>
+    <div className="cart-container">
+      <Link to="/">
+        <button className="back-button">
+          <span>←</span>
+        </button>
+      </Link>
+      <div className="container-title">
+        <h2 className="title-Cart">Shooping Cart</h2>
+        <h3 className="subtitle-Cart">Shop</h3>
+      </div>
       {carrito.length === 0 ? (
-        <div>
+        <div className="empty-cart">
           <p>Carrito vacío</p>
           <Link to="/">
-            <button>Volver a compras</button>
+            <button className="back-to-shop-btn">Volver a compras</button>
           </Link>
         </div>
       ) : (
         <>
           {carrito.map((product) => (
-            <div key={product.id}>
+            <div key={product.id} className="cart-item">
               <img src={product.image} alt={product.title} />
-              <p>{product.title}</p>
-              <p>Precio por unidad: ${product.price}</p>
-              <p>Cantidad: {product.quantity}</p>
-              <p>Total por producto: ${product.price * product.quantity}</p>
-              <button onClick={() => removeFromCart(product.id)}>
-                Eliminar
+              <div className="product-details">
+                <p className="product-title">{product.title}</p>
+                <p className="product-price">
+                  Precio por unidad: ${product.price}
+                </p>
+                <p className="product-quantity">Cantidad: {product.quantity}</p>
+                <p className="product-total">
+                  Total por producto: ${product.price * product.quantity}
+                </p>
+              </div>
+              <button
+                className="remove-btn"
+                onClick={() => removeFromCart(product.id)}
+              >
+                X
               </button>
             </div>
           ))}
-          <div>
-            <p>Total: ${calculateTotalPrice()}</p>
-            <button onClick={clearCart}>Vaciar Carrito</button>
+          <div className="cart-total">
+            <p>Total: ${calculateTotalPrice().toFixed(3).replace(/\.?0+$/, '')}</p>
+            <button className="clear-cart-btn" onClick={clearCart}>
+              Vaciar Carrito
+            </button>
+            <button className="checkout-btn">Comprar</button>
           </div>
         </>
       )}

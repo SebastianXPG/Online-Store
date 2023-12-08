@@ -1,11 +1,10 @@
-.pagination button{
-  border: none; 
-  color: white; 
-  padding: 14px 28px; 
-  cursor: pointer; 
-  border-radius: 5px; 
+.pagination button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
   background-color: #007bff;
-background: #0b7dda;
-margin-left: 3px;
+  background: #0b7dda;
+  margin-left: 3px;
 }
-

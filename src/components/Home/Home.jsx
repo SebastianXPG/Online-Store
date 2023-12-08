@@ -1,24 +1,24 @@
-// Home.jsx
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Pages from "../Pages/Pages.jsx";
-import "../Home/Home.css";
+import axios from "axios";
+import "./Home.css";
 
-const Home = ({ setCarrito, carrito }) => {
+const Home = ({ carrito, setCarrito }) => {
   const [products, setProducts] = useState([]);
   const [productsPage] = useState(6);
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalProducts = products.length;
-  const lastPage = currentPage * productsPage;
-  const firstPage = lastPage - productsPage;
-
-  const productList = async () => {
-    const data = await fetch("https://fakestoreapi.com/products");
-    const products = await data.json();
-    setProducts(products);
-  };
+  const [currentPage, setCurrentPage] = useState(1); // Página actual
+  const [productTitle, setProductTitle] = useState("");
+  const totalProducts = products.length; // Total de productos
+  const lastPage = currentPage * productsPage; // Último índice de la página actual
+  const firstPage = lastPage - productsPage; // Primer índice de la página actual
 
   useEffect(() => {
-    productList();
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {});
   }, []);
 
   const addToCart = (product) => {
@@ -39,24 +39,44 @@ const Home = ({ setCarrito, carrito }) => {
 
   return (
     <>
-      <div className="container-products">
-        {products
-          .map((product) => (
-            <div className="card-product" key={product.id}>
-              <figure className="container-img">
-                <img src={product.image} alt={product.title} />
-              </figure>
-              <div className="info-product">
-                <h3>{product.title}</h3>
-                <p className="price">${product.price}</p>
-                <p className="price">{product.category}</p>
-                <button onClick={() => addToCart(product)}>
-                  Añadir al carrito
-                </button>
-              </div>
-            </div>
-          ))
-          .slice(firstPage, lastPage)}
+      <div>
+        <div className="container-input">
+          <h1>Buscar un producto</h1>
+          <input
+            type="text"
+            name="src"
+            className="placeholder-Header"
+            placeholder="Escribe el nombre del producto"
+            value={productTitle}
+            onChange={(e) => {
+              setProductTitle(e.target.value);
+            }}
+          />
+        </div>
+        <div className="container-products">
+          {products
+            .filter((row) =>
+              productTitle === ""
+                ? row
+                : row.title.toLowerCase().includes(productTitle.toLowerCase())
+            )
+            .map((row, i) => {
+              // Renderizar los productos filtrados y paginados
+              return (
+                <div className="card-product" key={i}>
+                  <div className="container-img">
+                    <img src={row.image} alt={row.title} />
+                  </div>
+                  <div className="info-product">
+                    <h2>{row.title.substring(0, 20)}</h2>
+                    <h3>Precio: ${row.price}</h3>
+                    <button onClick={() => addToCart(row)}>Añadir</button>
+                  </div>
+                </div>
+              );
+            })
+            .slice(firstPage, lastPage)}
+        </div>
       </div>
       <Pages
         productsPage={productsPage}
