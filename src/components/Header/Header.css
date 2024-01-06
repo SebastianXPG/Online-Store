@@ -3,10 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  background-image: url("https://besthqwallpapers.com/Uploads/31-8-2019/103549/gray-low-poly-background-low-poly-abstract-background-geometric-background-creative-art.jpg");
-  position: relative;
-  border-radius: 10px;
-  filter: opacity(0.9) grayscale(0.3);
+  background-color: #333333e3;
 }
 
 .Logo {
@@ -55,4 +52,45 @@
 
 .login-button:hover {
   background: linear-gradient(to right, #2bffcab7, #1aab8a);
+}
+
+.input-group {
+  width: 600px;
+}
+
+.input-group input {
+  background-color: #fff;
+}
+
+.input-group button {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+
+.input-group button:hover {
+  background-color: #fff;
+}
+
+.input-group i {
+  color: black;
+  font-size: 20px;
+}
+
+.input-group i:hover {
+  color: orange;
+}
+
+.placeholder-Header {
+  border-radius: 10px;
+  border-style: none;
+  padding: 0px 0px 0px 15px;
+  height: 45px;
+  width: 80%;
+  background-color: #1aab8962;
+  margin-left: 50px;
+}
+
+.placeholder-Header:focus {
+  outline: none;
 }

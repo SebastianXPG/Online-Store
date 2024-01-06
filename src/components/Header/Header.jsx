@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/img/Logo.png";
 import { Link } from "react-router-dom";
 import "../Header/Header.css";
 
-function Header({ carrito }) {
+function Header({ carrito, setCarrito, handleSearch }) {
+  const [productTitle, setProductTitle] = useState("");
+
   const totalProductosEnCarrito = carrito
     ? carrito.reduce((total, product) => total + product.quantity, 0)
     : 0;
+
+  const handleInputChange = (e) => {
+    setProductTitle(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch(productTitle);
+    }
+  };
 
   return (
     <nav className="Navbar">
@@ -15,6 +27,26 @@ function Header({ carrito }) {
           <img src={Logo} alt="Logo" className="Logo" />
         </Link>
       </div>
+      <div className="content-input-search">
+        <div className="input-group">
+          <input
+            type="text"
+            name="src"
+            className="placeholder-Header"
+            placeholder="Escribe el nombre del producto"
+            value={productTitle}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyPress}
+          />
+          <button
+              // className="btn btn-outline-secondary"
+              type="button"
+              onClick={() => handleSearch(productTitle)}
+            >
+              <i className="bi bi-search"></i>
+            </button>
+        </div>
+      </div>
       <div className="content-svg-carrito">
         <Link to="/cart" className="carrito-enlace">
           <i className="bi bi-cart3"></i>
@@ -22,7 +54,7 @@ function Header({ carrito }) {
         </Link>
       </div>
       <div className="content-button-login">
-        <button className="login-button">Iniciar Seccion</button>
+        <button className="login-button">Iniciar Sección</button>
       </div>
     </nav>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../Pages/Pages.css";
 
 const Pages = ({
   productsPage, // Número de productos por página

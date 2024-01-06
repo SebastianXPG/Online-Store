@@ -31,19 +31,19 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={whatsapp} alt="WhatsApp" />
+            <img src={whatsapp} alt="WhatsApp" className="icon-footer"/>
             WhatsApp
           </a>
           <a href="/">
-            <img src={facebook} alt="Facebook" />
+            <img src={facebook} alt="Facebook" className="icon-footer"/>
             Facebook
           </a>
           <a href="/">
-            <img src={instagram} alt="Instagram" />
+            <img src={instagram} alt="Instagram" className="icon-footer"/>
             Instagram
           </a>
           <a href="/">
-            <img src={discord} alt="Discord" />
+            <img src={discord} alt="Discord" className="icon-footer"/>
             Discord
           </a>
         </div>

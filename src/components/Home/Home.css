@@ -1,148 +1,111 @@
-.container-input {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 10px 0px 20px 0px;
-  align-items: center;
-}
-
-.placeholder-Header {
-  border-radius: 30px;
-  border-style: none;
-  padding: 0px 0px 0px 15px;
-  height: 45px;
-  width: 80vh;
-  background-color: #1aab8962;
-  margin-left: 50px;
-}
-
-.placeholder-Header:focus {
-  outline: none;
-}
-
-.container-products {
+.content-products {
+  /* background-color: aqua; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  border: 1px solid #000;
-  border-radius: 10px;
+  grid-template-columns: auto auto auto auto;
+  place-items: center;
 }
 
 .card-product {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  transition: 0.3s;
-  border: 1px solid black;
-  box-shadow: 0px 0px 5px grey;
-  border-radius: 10px 10px 10px 10px;
+  align-items: center;
+  /* background-color: blueviolet; */
+  width: 300px;
+  height: 500px;
+  margin: 40px 0px 20px 0px;
+  background-color: #fff;
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  padding: 10px; 
+  transition: transform 0.3s ease-in-out; 
 }
+
 .card-product:hover {
-  box-shadow: 0px 0px 10px var(--softer-color);
-  transform: scale(1.01);
+  transform: translateY(-5px);
 }
 
-.container-img img {
-  margin-top: 10px;
+.content-img {
   width: 100%;
-  height: 230px;
-  object-fit: contain;
+  height: 65%;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  position: relative;
 }
 
-.info-product {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 15px 30px;
+.content-img img {
+  width: 100%;
   height: 100%;
 }
 
-.info-product button {
-  background: #1aab8a;
-  color: #fff;
-  border: none;
+.info-product {
+  /* background-color: yellow; */
+  width: 100%;
+  height: 25%;
+  padding-left: 10px;
+  padding-bottom: 10PX;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.info-product p{
+  font-family: 'Mina', sans-serif;
+}
+
+.content-buttons{
+  height: 10%;
+  width: 100%;
+  /* background-color: blue; */
+  font-size: 30px;
   position: relative;
-  height: 60px;
-  font-size: 1.6em;
-  padding: 0 2em;
-  cursor: pointer;
-  transition: 800ms ease all;
-  outline: none;
-  border: 2px solid #000;
-  border-radius: 10px;
 }
-/* .info-product button:hover{
-  background:#fff;
-  color:#1AAB8A;
-}
-.info-product button:before, .info-product button:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: #1AAB8A;
-  transition:400ms ease all;
-}
-.info-product button:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-}
-.info-product button:hover:before,.info-product button:hover:after{
-  width:100%;
-  transition:800ms ease all;
-} */
 
-.pagination {
+.content-buttons-animations{
+  background-color: rgb(56, 55, 55);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.1s;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
 }
 
-.pagination button {
-  background-color: #1aab8a;
-  color: white;
+button {
+  background: none;
   border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
   cursor: pointer;
 }
 
-.pagination button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.Add-Cart{
+  border-right: 2px solid #000;
+  width: 50%;
 }
 
-.pagination button:hover {
-  background-color: #1aab8a;
+.icon-cart, .icon-heart{
+  color: #fff;
 }
 
-.pagination .pagination-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
+.icon-cart:hover{
+  color: orange;
 }
 
-.pagination .pagination-list li {
-  margin: 0 5px;
+.icon-heart:hover{
+  color: red;
 }
 
-.pagination .pagination-link {
-  background-color: #f2f2f2;
-  color: #333;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
+.like-button{
+  width: 50%;
 }
 
-.pagination .pagination-link.is-current {
-  background-color: #1aab8a;
-  color: white;
+
+.card-product:hover .content-buttons-animations{
+  transform: translateY(0);
+  opacity: 1;
 }
+
+
