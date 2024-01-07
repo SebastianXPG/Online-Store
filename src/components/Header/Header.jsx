@@ -39,12 +39,12 @@ function Header({ carrito, setCarrito, handleSearch }) {
             onKeyDown={handleKeyPress}
           />
           <button
-              // className="btn btn-outline-secondary"
-              type="button"
-              onClick={() => handleSearch(productTitle)}
-            >
-              <i className="bi bi-search"></i>
-            </button>
+            // className="btn btn-outline-secondary"
+            type="button"
+            onClick={() => handleSearch(productTitle)}
+          >
+            <i className="bi bi-search"></i>
+          </button>
         </div>
       </div>
       <div className="content-svg-carrito">
@@ -54,7 +54,9 @@ function Header({ carrito, setCarrito, handleSearch }) {
         </Link>
       </div>
       <div className="content-button-login">
-        <button className="login-button">Iniciar Sección</button>
+        <Link to="/login" className="login-link">
+          <button className="login-button">Iniciar Sección</button>
+        </Link>
       </div>
     </nav>
   );

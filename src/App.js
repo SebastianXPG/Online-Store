@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
+import Login from "./components/Login/Login";
 import Footer from "./components/Footer/Footer";
 import axios from "axios";
 
@@ -44,18 +45,21 @@ function App() {
             path="/cart"
             element={<Cart carrito={carrito} setCarrito={setCarrito} />}
           />
+          <Route path="/login" element={<Login />} />
           <Route
             path="/"
             element={
-              <Home
-                setCarrito={setCarrito}
-                carrito={carrito}
-                filteredProducts={filteredProducts}
-              />
+              <>
+                <Home
+                  setCarrito={setCarrito}
+                  carrito={carrito}
+                  filteredProducts={filteredProducts}
+                />
+                <Footer />
+              </>
             }
           />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );
