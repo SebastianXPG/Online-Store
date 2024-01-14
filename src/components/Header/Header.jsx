@@ -55,7 +55,7 @@ function Header({ carrito, setCarrito, handleSearch }) {
       </div>
       <div className="content-button-login">
         <Link to="/login" className="login-link">
-          <button className="login-button">Iniciar Sección</button>
+          <button className="login-button">SIGN IN <span>/</span> SIGN UP</button>
         </Link>
       </div>
     </nav>

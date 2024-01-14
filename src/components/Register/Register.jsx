@@ -1,9 +1,9 @@
-import "../Login/Login.css";
+import "../Register/Register.css";
 import Logo from "../../assets/img/Logo.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Register() {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -12,9 +12,9 @@ function Login() {
 
   return (
     <div className="container-p">
-      <div className="content-3-login">
-        <div className="title-login">
-          <div className="content-title-sign-in">
+      <div className="content-3-register">
+        <div className="title-register">
+          <div className="content-title-register">
             <i className="bi bi-person-fill"></i>
             <Link to="/Login" className="Sign-link">
               <h2>SIGN IN</h2>
@@ -28,26 +28,34 @@ function Login() {
           </div>
         </div>
         <div className="content-l-i">
-          <div className="content-login">
+          <div className="content-register">
             <div className="logo">
               <img src={Logo} alt="" />
             </div>
-            <div className="content-title-login">
+            <div className="content-title-register">
               <h1>Welcome</h1>
             </div>
-            <div className="content-button-google-login">
+            <div className="content-button-google-register">
               <button className="btn-google">Login With Google</button>
             </div>
-            <div className="content-separator-login">
-              <div className="line-login"></div>
+            <div className="content-separator-register">
+              <div className="line-register"></div>
               <span>OR LOGIN WITH GOOGLE</span>
-              <div className="line-login"></div>
+              <div className="line-register"></div>
             </div>
             <div className="content-form">
-              <div className="form-login">
+              <div className="form-register">
                 <form action="/">
                   <div className="user-container">
-                    <label htmlFor="usuario">USERNAME</label>
+                    <label htmlFor="usuario">NAME</label>
+                    <input type="text" id="usuario" name="usuario" />
+                  </div>
+                  <div className="user-container">
+                    <label htmlFor="usuario">EMAIL</label>
+                    <input type="email" id="usuario" name="usuario" />
+                  </div>
+                  <div className="user-container">
+                    <label htmlFor="usuario">PHONE</label>
                     <input type="text" id="usuario" name="usuario" />
                   </div>
                   <div className="password-container">
@@ -68,7 +76,7 @@ function Login() {
                       )}
                     </span>
                   </div>
-                  <div className="content-opcions-login">
+                  <div className="content-opcions-register">
                     <div className="content-input-stay-connected">
                       <input type="checkbox" name="" id="" />
                       Stay Connected
@@ -77,24 +85,24 @@ function Login() {
                       <a href="#">I fort my password</a>
                     </div>
                   </div>
-                  <div className="content-button-login-1">
-                    <button className="button-login">LOGIN</button>
+                  <div className="content-button-register-1">
+                    <button className="button-register">LOGIN</button>
                   </div>
                 </form>
               </div>
             </div>
-            <div className="content-register-login">
-              <span>You do not have an account?</span>
-              <Link to="/Register" className="Register-link">
-                <a href="#">Register</a>
+            <div className="content-login-register">
+              <span>Do you already have an account?</span>
+              <Link to="/Login" className="Register-link">
+                <a href="#">Sign In</a>
               </Link>
             </div>
           </div>
-          <div className="content-info-login"></div>
+          <div className="content-info-register"></div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;

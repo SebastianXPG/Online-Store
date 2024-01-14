@@ -7,6 +7,7 @@ import Cart from "./components/Cart/Cart";
 import Login from "./components/Login/Login";
 import Footer from "./components/Footer/Footer";
 import axios from "axios";
+import Register from "./components/Register/Register";
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -46,6 +47,7 @@ function App() {
             element={<Cart carrito={carrito} setCarrito={setCarrito} />}
           />
           <Route path="/login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
           <Route
             path="/"
             element={
