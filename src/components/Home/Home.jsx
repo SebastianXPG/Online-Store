@@ -7,7 +7,7 @@ import "./Home.css";
 
 const Home = ({ carrito, setCarrito, filteredProducts }) => {
   const [products, setProducts] = useState([]);
-  const [productsPage] = useState(8);
+  const [productsPage] = useState(16);
   const [currentPage, setCurrentPage] = useState(1);
   const totalProducts = filteredProducts.length || products.length;
   const lastPage = currentPage * productsPage;
@@ -15,7 +15,7 @@ const Home = ({ carrito, setCarrito, filteredProducts }) => {
 
   useEffect(() => {
     axios
-      .get("https://fakestoreapi.com/products")
+      .get("http://localhost:3000/products")
       .then((response) => {
         setProducts(response.data);
       })
@@ -45,7 +45,8 @@ const Home = ({ carrito, setCarrito, filteredProducts }) => {
               return (
                 <div className="card-product" key={i}>
                   <div className="content-img">
-                    <img src={row.image} alt={row.title} />
+                    {/* Ajustar src a la propiedad correcta */}
+                    <img src={row.img} alt={row.name} />
                   </div>
                   <div className="content-buttons">
                     <div className="content-buttons-animations">
@@ -69,8 +70,9 @@ const Home = ({ carrito, setCarrito, filteredProducts }) => {
                     </div>
                   </div>
                   <div className="info-product">
+                    {/* Ajustar las propiedades a los nombres correctos */}
                     <p className="p">{row.category}</p>
-                    <h2>{row.title.substring(0, 20)}</h2>
+                    <h2>{row.name.substring(0, 20)}</h2>
                     <h3>Precio: ${row.price}</h3>
                   </div>
                 </div>

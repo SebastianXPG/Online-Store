@@ -36,7 +36,7 @@ function Register() {
               <h1>Welcome</h1>
             </div>
             <div className="content-button-google-register">
-              <button className="btn-google">Login With Google</button>
+              <button className="btn-google">Sign Up With Google</button>
             </div>
             <div className="content-separator-register">
               <div className="line-register"></div>
@@ -58,7 +58,7 @@ function Register() {
                     <label htmlFor="usuario">PHONE</label>
                     <input type="text" id="usuario" name="usuario" />
                   </div>
-                  <div className="password-container">
+                  <div className="password-container-register">
                     <label htmlFor="password">PASSWORD</label>
                     <input
                       type={showPassword ? "text" : "password"}
@@ -76,7 +76,7 @@ function Register() {
                       )}
                     </span>
                   </div>
-                  <div className="content-opcions-register">
+                  {/* <div className="content-opcions-register">
                     <div className="content-input-stay-connected">
                       <input type="checkbox" name="" id="" />
                       Stay Connected
@@ -84,9 +84,9 @@ function Register() {
                     <div className="content-link-fort-password">
                       <a href="#">I fort my password</a>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="content-button-register-1">
-                    <button className="button-register">LOGIN</button>
+                    <button className="button-register">REGISTER</button>
                   </div>
                 </form>
               </div>

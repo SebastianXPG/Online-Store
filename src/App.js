@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     // Cargar la lista completa de productos al inicio
     axios
-      .get("https://fakestoreapi.com/products")
+      .get("http://localhost:3000/products")
       .then((response) => {
         setProducts(response.data);
         setFilteredProducts(response.data); // Inicializar con todos los productos
